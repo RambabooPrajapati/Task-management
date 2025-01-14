@@ -1,0 +1,84 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgb(221, 217, 217);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Add shadow when scrolling */
+.header.scrolled {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+  margin-right: 10px;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Mobile Menu */
+@media (max-width: 568px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    border-top: 1px solid rgb(221, 217, 217);
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu li {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+/* Links */
+.menu li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  box-shadow: 1px 1px 1px 2px rgb(248, 246, 246);
+  border-radius: 6px;
+  padding: 5px;
+  transition: color 0.2s ease-in-out;
+}
+
+.menu li a:hover {
+  color: #625ee7;
+}
+
+/* Menu Toggle (Mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 568px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+}
